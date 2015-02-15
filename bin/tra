@@ -1,0 +1,48 @@
+#! /usr/bin/env node
+var superagent = require('superagent');
+var arg = process.argv.slice(2);
+var settings = require('../settings');
+
+
+
+//用百度翻译的api翻译
+var translate = function(value){
+  var search='http://openapi.baidu.com/public/2.0/translate/dict/simple?client_id='+settings.apiKey+'&q='+value+'&from=en&to=zh';
+  superagent.get(search)
+  .end(function(err,sres){
+      if(err){
+        return next(err);
+      }
+      var text = JSON.parse(sres.text);
+      if(!text.data.symbols){
+        console.log('输入命令无效或则查无此词，输入tran -h查看帮助');
+        return 0;
+        }
+      var hehe = text.data.symbols[0].parts;
+      var back = hehe[0].part+hehe[0].means;
+      for (var i = 1; i < hehe.length; i++) {
+        back+='\n'+hehe[i].part+hehe[i].means;
+      }
+        console.log(back);
+  });
+};
+
+
+//命令选择
+var choice = function(arg){
+  if(arg == '-v'){
+    return settings.version;
+  }else if(arg == ''){
+    return settings.help;
+  }else if(arg == '-h'){
+    return settings.help;
+  }
+  var rt = translate(arg);
+  return '';
+};
+
+//调用choice开始函数运行
+var done = choice(arg);
+if(done !=''){
+  console.log(done);
+}

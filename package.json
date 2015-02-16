@@ -1,6 +1,6 @@
 {
   "name": "tra",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "一个单词翻译的sheel工具",
   "main": "index.js",
   "repository": "https://github.com/wszgxa/tra",

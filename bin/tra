@@ -19,8 +19,8 @@ var translate = function(value){
         return 0;
         }
       var lots = text.data.symbols[0].parts;
-      var back = lots[0].part+hehe[0].means;
-      for (var i = 1; i < hehe.length; i++) {
+      var back = lots[0].part+lots[0].means;
+      for (var i = 1; i < lots.length; i++) {
         back+='\n'+lots[i].part+lots[i].means;
       }
         console.log(back);

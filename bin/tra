@@ -18,10 +18,10 @@ var translate = function(value){
         console.log('输入命令无效或则查无此词，输入tran -h查看帮助');
         return 0;
         }
-      var hehe = text.data.symbols[0].parts;
-      var back = hehe[0].part+hehe[0].means;
+      var lots = text.data.symbols[0].parts;
+      var back = lots[0].part+hehe[0].means;
       for (var i = 1; i < hehe.length; i++) {
-        back+='\n'+hehe[i].part+hehe[i].means;
+        back+='\n'+lots[i].part+lots[i].means;
       }
         console.log(back);
   });

@@ -15,7 +15,7 @@ var translate = function(value){
       }
       var text = JSON.parse(sres.text);
       if(!text.data.symbols){
-        console.log('输入命令无效或则查无此词，输入tran -h查看帮助');
+        console.log('输入命令无效或则查无此词，输入tra -h查看帮助');
         return 0;
         }
       var lots = text.data.symbols[0].parts;
@@ -23,7 +23,7 @@ var translate = function(value){
       for (var i = 1; i < lots.length; i++) {
         back+='\n'+lots[i].part+lots[i].means;
       }
-        console.log(back);
+        console.log('\033[32m'+back+'\033[0m');
   });
 };
 

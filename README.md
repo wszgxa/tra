@@ -18,5 +18,8 @@ $ sudo npm install -g tra
 
 如果有问题，请提issue
 
+## License
+**MIT**
+
 ## 使用效果图
 ![效果图](http://7vzo21.com1.z0.glb.clouddn.com/选区_011.png)

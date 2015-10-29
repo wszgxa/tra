@@ -1,6 +1,11 @@
 # tra
 **一个用基于nodejs的sheel翻译工具**
 
+
+## 提示
+
+重新更新了，需要重新安装下。
+
 ## 依赖
 必须有nodejs版本在0.10.x以上都可以，npm必须的。另外在windows下暂时不知道是否有bug，有请提issue。
 
@@ -17,6 +22,9 @@ $ sudo npm install -g tra
 * 输入`tra -v`显示版本
 
 如果有问题，请提issue
+
+## 更新
+因为百度api出问题了。请重新安装。
 
 ## License
 **MIT**

@@ -1,19 +1,22 @@
 {
   "name": "tra",
-  "version": "0.0.7",
+  "version": "0.1.2",
   "description": "一个单词翻译的sheel工具",
-  "main": "index.js",
-  "repository": "https://github.com/wszgxa/tra",
+  "main": "bin/tra",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wszgxa/tra.git"
+  },
   "engines": {
     "node": ">=0.10"
   },
-  "keywords":[
+  "keywords": [
     "sheel",
     "translate",
     "中文",
-    "english"
+    "english",
+    "翻译"
   ],
-  "main": "bin/tra",
   "preferGlobal": true,
   "bin": {
     "tra": "./bin/tra"
@@ -24,5 +27,10 @@
   "author": "hiluluke",
   "dependencies": {
     "superagent": "^0.21.0"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/wszgxa/tra/issues"
+  },
+  "homepage": "https://github.com/wszgxa/tra#readme",
+  "license": "ISC"
 }

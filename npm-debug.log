@@ -1,94 +1,26 @@
 0 info it worked if it ends with ok
-1 verbose cli [ '/usr/local/bin/node', '/usr/local/bin/npm', 'publish' ]
+1 verbose cli [ '/usr/local/bin/node', '/usr/local/bin/npm', 'init' ]
 2 info using npm@2.11.3
 3 info using node@v0.12.7
-4 verbose publish [ '.' ]
-5 silly cache add args [ '.', null ]
-6 verbose cache add spec .
-7 silly cache add parsed spec { raw: '.',
-7 silly cache add   scope: null,
-7 silly cache add   name: null,
-7 silly cache add   rawSpec: '.',
-7 silly cache add   spec: '/home/hiluluke-youmi/demo/tra',
-7 silly cache add   type: 'directory' }
-8 verbose addLocalDirectory /home/hiluluke-youmi/.npm/tra/0.1.0/package.tgz not in flight; packing
-9 verbose tar pack [ '/home/hiluluke-youmi/.npm/tra/0.1.0/package.tgz',
-9 verbose tar pack   '/home/hiluluke-youmi/demo/tra' ]
-10 verbose tarball /home/hiluluke-youmi/.npm/tra/0.1.0/package.tgz
-11 verbose folder /home/hiluluke-youmi/demo/tra
-12 info prepublish tra@0.1.0
-13 verbose addLocalTarball adding from inside cache /home/hiluluke-youmi/.npm/tra/0.1.0/package.tgz
-14 silly cache afterAdd tra@0.1.0
-15 verbose afterAdd /home/hiluluke-youmi/.npm/tra/0.1.0/package/package.json not in flight; writing
-16 verbose afterAdd /home/hiluluke-youmi/.npm/tra/0.1.0/package/package.json written
-17 silly publish { name: 'tra',
-17 silly publish   version: '0.1.0',
-17 silly publish   description: '一个单词翻译的sheel工具',
-17 silly publish   main: 'bin/tra',
-17 silly publish   repository: { type: 'git', url: 'git+https://github.com/wszgxa/tra.git' },
-17 silly publish   engines: { node: '>=0.10' },
-17 silly publish   keywords: [ 'sheel', 'translate', '中文', 'english' ],
-17 silly publish   preferGlobal: true,
-17 silly publish   bin: { tra: './bin/tra' },
-17 silly publish   scripts: { test: 'echo "Error: no test specified" && exit 1' },
-17 silly publish   author: { name: 'hiluluke' },
-17 silly publish   dependencies: { superagent: '^0.21.0' },
-17 silly publish   bugs: { url: 'https://github.com/wszgxa/tra/issues' },
-17 silly publish   homepage: 'https://github.com/wszgxa/tra#readme',
-17 silly publish   license: 'ISC',
-17 silly publish   readme: '# tra\n**一个用基于nodejs的sheel翻译工具**\n\n## 依赖\n必须有nodejs版本在0.10.x以上都可以，npm必须的。另外在windows下暂时不知道是否有bug，有请提issue。\n\n## 安装\n\n```sh\n$ sudo npm install -g tra\n```\n## 快速开始\n\n安装完成后直接打开命令行输入`tra 单词`如输入`tra hello`\n另外还有一些其他的：\n* 输入`tra -h`打开帮助文档\n* 输入`tra -v`显示版本\n\n如果有问题，请提issue\n\n## License\n**MIT**\n\n## 使用效果图\n![效果图](http://7vzo21.com1.z0.glb.clouddn.com/选区_011.png)\n',
-17 silly publish   readmeFilename: 'README.md',
-17 silly publish   gitHead: '9e8fd381f9d61970ae2f86ff34f3472dc03554bd',
-17 silly publish   _id: 'tra@0.1.0',
-17 silly publish   _shasum: 'dba4e1db21ab930a28174e2e4674ad2556488b2e',
-17 silly publish   _from: '.' }
-18 verbose getPublishConfig undefined
-19 silly mapToRegistry name tra
-20 silly mapToRegistry using default registry
-21 silly mapToRegistry registry https://registry.npmjs.org/
-22 silly mapToRegistry uri https://registry.npmjs.org/tra
-23 verbose publish registryBase https://registry.npmjs.org/
-24 silly publish uploading /home/hiluluke-youmi/.npm/tra/0.1.0/package.tgz
-25 verbose request uri https://registry.npmjs.org/tra
-26 verbose request sending authorization for write operation
-27 info attempt registry request try #1 at 18:15:29
-28 verbose request using bearer token for auth
-29 verbose request id 8973c826ed6cbf39
-30 http request PUT https://registry.npmjs.org/tra
-31 http 403 https://registry.npmjs.org/tra
-32 verbose headers { 'content-type': 'application/json',
-32 verbose headers   'cache-control': 'max-age=60',
-32 verbose headers   'content-length': '95',
-32 verbose headers   'accept-ranges': 'bytes',
-32 verbose headers   date: 'Thu, 29 Oct 2015 10:15:31 GMT',
-32 verbose headers   via: '1.1 varnish',
-32 verbose headers   connection: 'keep-alive',
-32 verbose headers   'x-served-by': 'cache-ams4141-AMS',
-32 verbose headers   'x-cache': 'MISS',
-32 verbose headers   'x-cache-hits': '0',
-32 verbose headers   'x-timer': 'S1446113730.244055,VS0,VE1121' }
-33 verbose request invalidating /home/hiluluke-youmi/.npm/registry.npmjs.org/tra on PUT
-34 error publish Failed PUT 403
-35 verbose stack Error: "You cannot publish over the previously published version 0.1.0." : tra
-35 verbose stack     at CachingRegistryClient.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:247:14)
-35 verbose stack     at Request._callback (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:170:14)
-35 verbose stack     at Request.self.callback (/usr/local/lib/node_modules/npm/node_modules/request/request.js:354:22)
-35 verbose stack     at Request.emit (events.js:110:17)
-35 verbose stack     at Request.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:1207:14)
-35 verbose stack     at Request.emit (events.js:129:20)
-35 verbose stack     at IncomingMessage.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:1153:12)
-35 verbose stack     at IncomingMessage.emit (events.js:129:20)
-35 verbose stack     at _stream_readable.js:908:16
-35 verbose stack     at process._tickCallback (node.js:355:11)
-36 verbose statusCode 403
-37 verbose pkgid tra
-38 verbose cwd /home/hiluluke-youmi/demo/tra
-39 error Linux 3.16.0-51-generic
-40 error argv "/usr/local/bin/node" "/usr/local/bin/npm" "publish"
-41 error node v0.12.7
-42 error npm  v2.11.3
-43 error code E403
-44 error "You cannot publish over the previously published version 0.1.0." : tra
-45 error If you need help, you may report this error at:
-45 error     <https://github.com/npm/npm/issues>
-46 verbose exit [ 1, true ]
+4 silly package data undefined
+5 info init written successfully
+6 verbose stack TypeError: Cannot read property 'trim' of undefined
+6 verbose stack     at Object.exports.valid (/usr/local/lib/node_modules/npm/node_modules/spdx/source/spdx.js:19:13)
+6 verbose stack     at module.exports (/usr/local/lib/node_modules/npm/node_modules/init-package-json/node_modules/validate-npm-package-license/index.js:5:12)
+6 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/init-package-json/default-input.js:230:13
+6 verbose stack     at PromZard.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/init-package-json/node_modules/promzard/promzard.js:226:19)
+6 verbose stack     at onError (/usr/local/lib/node_modules/npm/node_modules/read/lib/read.js:94:12)
+6 verbose stack     at Interface.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/read/lib/read.js:66:5)
+6 verbose stack     at Interface.emit (events.js:104:17)
+6 verbose stack     at Interface._ttyWrite (readline.js:694:16)
+6 verbose stack     at ReadStream.onkeypress (readline.js:109:10)
+6 verbose stack     at ReadStream.emit (events.js:110:17)
+7 verbose cwd /home/hiluluke-youmi/demo/tra
+8 error Linux 3.16.0-51-generic
+9 error argv "/usr/local/bin/node" "/usr/local/bin/npm" "init"
+10 error node v0.12.7
+11 error npm  v2.11.3
+12 error Cannot read property 'trim' of undefined
+13 error If you need help, you may report this error at:
+13 error     <https://github.com/npm/npm/issues>
+14 verbose exit [ 1, true ]

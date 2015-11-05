@@ -5,7 +5,7 @@ var settings = require('../settings');
 
 
 
-//用百度翻译的api翻译
+//用有道翻译的api翻译
 var translate = function(value){
   var search='http://fanyi.youdao.com/openapi.do?keyfrom='+settings.keyFrom+'&key='+settings.apiKey+'&type=data&doctype=json&version=1.1'+'&q='+value;
   superagent.get(search)
@@ -14,28 +14,20 @@ var translate = function(value){
         return next(err);
       }
       var text = JSON.parse(sres.text);
-
       if(!text.errorCode){
         console.log('\033[32m'+'翻译：'+text.translation+'\033[0m');
         var back = '';
-        if (text.basic.explains) {
+        if (text.basic !== undefined ) {
           console.log('\033[34m'+'解释：'+'\033[0m');
           text.basic.explains.forEach(function(element, index){
               console.log('\033[34m'+element+'\033[0m');
           });
         };
-
-      //   // console.log('输入命令无效或则查无此词，输入tra -h查看帮助');
-      //   return 0;
-      //   }
-      // var lots = text.data.symbols[0].parts;
-      // var back = lots[0].part+lots[0].means;
-      // for (var i = 1; i < lots.length; i++) {
-      //   back+='\n'+lots[i].part+lots[i].means;
+      } else {
+        console.log('输入命令无效或则查无此词，输入tra -h查看帮助');
       }
   });
 };
-
 
 //命令选择
 var choice = function(arg){

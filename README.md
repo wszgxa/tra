@@ -23,6 +23,9 @@ $ sudo npm install -g tra
 
 如果有问题，请提issue
 
+## 更新
+因为百度api出问题了。请重新安装。
+
 ## License
 **MIT**
 

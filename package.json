@@ -14,7 +14,8 @@
     "sheel",
     "translate",
     "中文",
-    "english"
+    "english",
+    "翻译"
   ],
   "preferGlobal": true,
   "bin": {

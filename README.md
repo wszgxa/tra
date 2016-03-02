@@ -1,8 +1,6 @@
 # tra
 **一个用基于nodejs的sheel翻译工具**
 
-[![NPM version][npm-image]][npm-url] [![Downloads][downloads-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Coveralls Status][coveralls-image]][coveralls-url] [![Gitter chat][gitter-image]][gitter-url]
-
 ## 提示
 
 重新更新了，需要重新安装下。

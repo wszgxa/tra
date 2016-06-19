@@ -1,49 +1,60 @@
 #! /usr/bin/env node
-var superagent = require('superagent');
-var arg = process.argv.slice(2);
-var settings = require('../settings');
+var superagent = require('superagent')
+var arg = process.argv.slice(2)
+var settings = require('../settings')
 
 
 
 //用有道翻译的api翻译
-var translate = function(value){
-  var search='http://fanyi.youdao.com/openapi.do?keyfrom='+settings.keyFrom+'&key='+settings.apiKey+'&type=data&doctype=json&version=1.1'+'&q='+value;
+var translate = function (value) {
+  var search='http://fanyi.youdao.com/openapi.do?keyfrom=' +
+              settings.keyFrom +
+              '&key=' +
+              settings.apiKey +
+              '&type=data&doctype=json&version=1.1' +
+              '&q=' +
+              value
+
   superagent.get(search)
-  .end(function(err,sres){
+    .end(function (err, res) {
       if(err){
-        return next(err);
+        return next(err)
       }
-      var text = JSON.parse(sres.text);
+      var text = JSON.parse(res.text)
       if(!text.errorCode){
-        console.log('\033[32m'+'翻译：'+text.translation+'\033[0m');
-        var back = '';
+        console.log('\033[32m'+'翻译：'+text.translation+'\033[0m')
+        var back = ''
         if (text.basic !== undefined ) {
           console.log('\033[34m'+'解释：'+'\033[0m');
           text.basic.explains.forEach(function(element, index){
               console.log('\033[34m'+element+'\033[0m');
           });
-        };
+        }
       } else {
         console.log('输入命令无效或则查无此词，输入tra -h查看帮助');
       }
-  });
-};
+    })
+}
 
 //命令选择
-var choice = function(arg){
-  if(arg == '-v'){
-    return settings.version;
-  }else if(arg == ''){
-    return settings.help;
-  }else if(arg == '-h'){
-    return settings.help;
+var choice = function (arg) {
+  switch (arg) {
+    case '-v':
+      return settings.version
+      break
+    case '':
+      return settings.help
+      break
+    case '-h':
+      return settings.help
+      break
+    default:
+      translate(arg)
+      return ''
   }
-  var rt = translate(arg);
-  return '';
 };
 
-//调用choice开始函数运行
-var done = choice(arg);
-if(done !=''){
-  console.log(done);
+var done = choice(arg)
+if (done != '') {
+  console.log(done)
 }

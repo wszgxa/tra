@@ -1,6 +1,6 @@
 {
   "name": "tra",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "一个单词翻译的sheel工具",
   "main": "bin/tra",
   "repository": {
